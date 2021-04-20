@@ -5,18 +5,19 @@
   import logo from "assets/image/logo.svg";
   import discord from "assets/image/discord.svg"
 
-  export let pages/*: ProjectPage */;
+  export let bookPages: ProjectPage[]/*: ProjectPage */;
 </script>
 
 <script context="module" lang="ts">
-  // import {ProjectPage} from "./_types.ts";
+  import type { ProjectPage } from "./_types";
 
   export async function preload(page, session) {
     const res = await this.fetch(`proj/recent.json`);
-    const pages/*: ProjectPage */ = await res.json();
+    const bookPages: ProjectPage[]/*: ProjectPage */ = await res.json();
 
     if (res.status === 200) {
-      return {pages};
+      console.log("Test",bookPages);
+      return {bookPages};
     } else {
       this.error(res.status, res.message);
     }
@@ -28,14 +29,14 @@
 </style>
 
 <svelte:head>
-    <title>LaSpruca - Semi-Professional Googler</title>
+    <title>Taiharuru Press</title>
 </svelte:head>
 
 <div class="app">
     <div class="name-wrapper">
         <div class="name">
             <img src={logo} alt="" class="logo"/>
-            <h3>Nathan Hare</h3>
+            <h3>Taiharuru Press</h3>
             <p>LaSpruca</p>
             <div class="social">
                 <a href="https://github.com/laspruca" target="_blank">
@@ -107,16 +108,17 @@
         </div>
 
         <div class="projects">
-            <h1>Recent Projects</h1>
+            <h1>Books</h1>
             <div class="cards">
-                {#each pages as project}
+                
+                {#each bookPages as book}
                     <Card
-                            name="/proj/{project.slug}"
-                            title="{project.metadata.title}"
-                            sub="{project.metadata.description}"
-                            subLinks="{project.metadata.subLinks}"
+                            name="/proj/{book.slug}"
+                            title="{book.metadata.title}"
+                            sub="{book.metadata.description}"
+                            subLinks="{book.metadata.subLinks}"
                     >
-                        {project.metadata.summary}
+                        {book.metadata.summary}
                     </Card>
                 {/each}
             </div>

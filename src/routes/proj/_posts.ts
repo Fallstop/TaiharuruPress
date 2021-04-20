@@ -5,7 +5,7 @@ import YAML from 'yaml';
 // import type {ProjectPage} from "../_types";
 
 export function getPosts()/*: ProjectPage[] */ {
-    const slugs = fs.readdirSync('projects')
+    const slugs = fs.readdirSync('books')
         .filter(file => path.extname(file) === '.md')
         .map(file => file.slice(0, -3));
 
