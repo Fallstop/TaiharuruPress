@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
-import React, { useState } from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import useSiteMetadata from '../hooks/use-site-config'
-import { media } from '../tokens'
-import useSiteImages from '../hooks/use-site-images'
-import DarkToggle from './DarkToggle'
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import useSiteMetadata from '../hooks/use-site-config';
+import { media } from '../tokens';
+import useSiteImages from '../hooks/use-site-images';
+import DarkToggle from './DarkToggle';
 
 const HeaderWrapper = styled.header`
   top: 0;
@@ -21,7 +21,7 @@ const HeaderWrapper = styled.header`
   @media ${media.medium} {
     position: fixed;
   }
-`
+`;
 
 const HeaderNav = styled.nav`
   font-weight: 700;
@@ -37,7 +37,7 @@ const HeaderNav = styled.nav`
   overflow-y: hidden;
   white-space: nowrap;
   padding: 0px 10px;
-`
+`;
 
 const HeaderLinksContainer = styled.div`
   display: none;
@@ -46,7 +46,7 @@ const HeaderLinksContainer = styled.div`
   @media ${media.medium} {
     display: flex;
   }
-`
+`;
 
 const HeaderLink = styled(Link)`
   position: relative;
@@ -62,21 +62,22 @@ const HeaderLink = styled(Link)`
   & + & {
     margin-left: 0.7rem;
   }
-`
+`;
 
 const HeaderLinkTitle = styled(HeaderLink)`
   padding-left: 0;
-`
+`;
 
 const HeaderLinkTitleContent = styled.span`
   display: block;
   padding-left: 0;
-`
+`;
 
-const HeaderImage = styled.img`
+const HeaderSVG = styled.svg`
   padding: 4px;
   height: 57px;
-`
+  
+`;
 
 const MobilePanel = styled.div`
   position: absolute;
@@ -91,7 +92,7 @@ const MobilePanel = styled.div`
   @media ${media.medium} {
     display: none;
   }
-`
+`;
 
 const SkipMainContent = styled.a`
   position: absolute;
@@ -109,7 +110,7 @@ const SkipMainContent = styled.a`
     position: static;
     padding: 20px 10px;
   }
-`
+`;
 
 const MobileNav = styled.nav`
   max-width: 800px;
@@ -124,7 +125,7 @@ const MobileNav = styled.nav`
     display: flex;
     margin: 10px 0 !important;
   }
-`
+`;
 
 const HeaderLinks = ({ headerLinks }) => {
   return headerLinks.map((headerLink, i) => (
@@ -135,8 +136,8 @@ const HeaderLinks = ({ headerLinks }) => {
     >
       {headerLink.label}
     </HeaderLink>
-  ))
-}
+  ));
+};
 
 const BurgerButton = styled.button`
   z-index: 30;
@@ -154,7 +155,7 @@ const BurgerButton = styled.button`
   @media ${media.medium} {
     display: none;
   }
-`
+`;
 
 const BurgerContent = styled.div`
   width: 24px;
@@ -177,9 +178,9 @@ const BurgerContent = styled.div`
     position: absolute;
     left: 0;
     ${props =>
-      props.isToggledOn
-        ? 'transform: rotate(45deg); top: 0;'
-        : 'transform: rotate(0)'};
+    props.isToggledOn
+      ? 'transform: rotate(45deg); top: 0;'
+      : 'transform: rotate(0)'};
     transition: all 250ms cubic-bezier(0.86, 0, 0.07, 1);
   }
   ::after {
@@ -191,16 +192,16 @@ const BurgerContent = styled.div`
     position: absolute;
     left: 0;
     ${props =>
-      props.isToggledOn
-        ? 'transform: rotate(-45deg); top: 0;'
-        : 'transform: rotate(0)'};
+    props.isToggledOn
+      ? 'transform: rotate(-45deg); top: 0;'
+      : 'transform: rotate(0)'};
     transition: all 250ms cubic-bezier(0.86, 0, 0.07, 1);
   }
-`
+`;
 
 const MobileHeader = ({ headerLinks }) => {
-  const [isToggledOn, setToggle] = useState(false)
-  const toggle = () => setToggle(!isToggledOn)
+  const [isToggledOn, setToggle] = useState(false);
+  const toggle = () => setToggle(!isToggledOn);
 
   return (
     <>
@@ -219,8 +220,8 @@ const MobileHeader = ({ headerLinks }) => {
         </MobilePanel>
       )}
     </>
-  )
-}
+  );
+};
 
 const Header = () => {
   const {
@@ -228,10 +229,7 @@ const Header = () => {
     siteTitle,
     headerTitle,
     headerLinksIcon,
-  } = useSiteMetadata()
-  const iconSrc = headerLinksIcon
-    ? useSiteImages(headerLinksIcon).fluid.src
-    : null
+  } = useSiteMetadata();
 
   return (
     <HeaderWrapper>
@@ -240,7 +238,14 @@ const Header = () => {
           Skip to main content
         </SkipMainContent>
         <HeaderLinkTitle to={`/`} aria-label={`View home page`}>
-          {iconSrc && <HeaderImage src={iconSrc} alt={siteTitle} />}
+          <HeaderSVG data-name="Layer 1" viewBox="0 0 603.26 786.07">
+              <defs>
+                <linearGradient id="linear-gradient" x1="517.36" y1="906.81" x2="517.36" y2="120.74" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#006994" /><stop offset="1" stopColor="#2697ff" /></linearGradient>
+              </defs>
+              <title>Logosvg</title>
+              <path style={{ fill: "url(#linear-gradient)" }} d="M819,605.18c0,166.59-135,301.63-301.63,301.63s-301.63-135-301.63-301.63S517.36,120.74,517.36,120.74,819,438.59,819,605.18Z" transform="translate(-215.73 -120.74)" />
+              {/* <path style={{ fill: "#fff" }} d="MM658.47,449.06l3.66,77.63h-9.28q-2.69-20.51-7.32-29.29-7.57-14.16-20.14-20.88t-33.08-6.71H545.68V722.74q0,30.51,6.59,38.08,9.27,10.26,28.56,10.26h11.48v9H451.93v-9h11.72q21,0,29.78-12.7,5.37-7.82,5.37-35.64V469.81H459q-23.2,0-33,3.42-12.71,4.63-21.73,17.82t-10.74,35.64H384.3l3.91-77.63Z" transform="translate(-215.73 -120.74)" /> */}
+          </HeaderSVG>
           <HeaderLinkTitleContent>{headerTitle}</HeaderLinkTitleContent>
         </HeaderLinkTitle>
         <HeaderLinksContainer>
@@ -250,7 +255,7 @@ const Header = () => {
         <MobileHeader headerLinks={headerLinks} />
       </HeaderNav>
     </HeaderWrapper>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

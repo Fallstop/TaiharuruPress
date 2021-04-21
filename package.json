@@ -1,14 +1,7 @@
 {
-  "name": "gatsby-starter-morning-dew",
+  "name": "taiharuru-press",
   "version": "0.0.0-development",
   "description": "A Gatsby theme/starter to build lightning-fast blog/websites",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "gatsby-plugin",
-    "gatsby-theme",
-    "starter"
-  ],
   "homepage": "https://github.com/maxpou/gatsby-starter-morning-dew#readme",
   "bugs": {
     "url": "https://github.com/maxpou/gatsby-starter-morning-dew/issues"
@@ -17,8 +10,7 @@
     "type": "git",
     "url": "https://github.com/maxpou/gatsby-starter-morning-dew.git"
   },
-  "license": "MIT",
-  "author": "Maxence Poutord <maxence.poutord@gmail.com>",
+  "license": "private",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
@@ -39,6 +31,7 @@
     "babel-plugin-styled-components": "^1.12.0",
     "disqus-react": "^1.0.8",
     "gatsby": "^3.0.0",
+    "gatsby-background-image": "^1.5.1",
     "gatsby-image": "^3.0.0",
     "gatsby-plugin-compile-es6-packages": "^2.1.0",
     "gatsby-plugin-manifest": "^3.0.0",

@@ -10,7 +10,8 @@ import Disqus from '../components/Disqus'
 
 const Page = props => {
   const page = props.data.page
-
+  console.log("page.frontmatter.cover && page.frontmatter.cover.publicURL",page.frontmatter.cover && page.frontmatter.cover.publicURL)
+  console.log("page.frontmatter",page.frontmatter)
   return (
     <Layout location={props.location}>
       <SEO

@@ -14,7 +14,7 @@ module.exports = {
   siteUrl: 'https://maxpou.github.io/',
   disqusSiteUrl: 'https://www.maxpou.fr/',
   // Prefixes all links. For cases when deployed to maxpou.fr/gatsby-starter-morning-dew/
-  pathPrefix: '/tp', // Note: it must *not* have a trailing slash.
+  pathPrefix: '/', // Note: it must *not* have a trailing slash.
   siteCover: 'cover-landscape.jpg', // file in content/images
   background_color: '#ffffff',
   theme_color: '#222222',

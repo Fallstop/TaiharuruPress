@@ -1,13 +1,83 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+
 import styled from 'styled-components'
 import useSiteMetadata from '../hooks/use-site-config'
 import useSiteImages from '../hooks/use-site-images'
 
-const HeroContainer = styled.div`
+import BackgroundImage from 'gatsby-background-image'
+
+
+const BackgroundSection = ({ className, imageName, children }) => {
+  const result = useStaticQuery(
+    graphql`
+      {
+        allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+          edges {
+            node {
+              relativePath
+              childImageSharp {
+                fluid(quality: 90, maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+    // graphql`
+    // query {
+    //   desktop: file(relativePath: { eq: "${imageName}" }) {
+    //     childImageSharp {
+    //       fluid(quality: 90, maxWidth: 1920) {
+    //         ...GatsbyImageSharpFluid_withWebp
+    //       }
+    //     }
+    //   }
+    // }
+  // `
+  )
+  const items = result.allFile.edges
+  const image = items.find(edge => edge.node.relativePath === imageName)
+  if (image === undefined) {
+    console.log(`Unable to find image: ${imageName} (in content/images), using backup process`)
+    return (
+      <div
+      Tag="section"
+      className={className}
+      backgroundColor={`#040e18`}
+      style={{ backgroundImage: `url("${imageName}")`}}
+    >
+      {children}
+    </div>
+    )
+  }
+  // Set ImageData.
+  const imageData = image.node.childImageSharp.fluid;
+
+  // const imageData = result.desktop.childImageSharp.fluid
+
+  console.log(imageData);
+
+  return (
+    <BackgroundImage
+      Tag="section"
+      className={className}
+      fluid={imageData}
+      backgroundColor={`#040e18`}
+    >
+      {children}
+    </BackgroundImage>
+  )
+}
+
+
+const BackgroundSectionStyled = styled(BackgroundSection)`
   position: relative;
   display: table;
   width: 100%;
-  height: 400px;
+  height: 600px;
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
@@ -37,16 +107,15 @@ const HeroSubTitle = styled.h2`
 
 const Hero = props => {
   const { siteCover } = useSiteMetadata()
-  const { fluid } = useSiteImages(siteCover)
-  const heroImg = props.heroImg || fluid.src
-
+  const imgName = props.heroImg || siteCover;
+  console.log("props.heroImg",props.heroImg)
   return (
-    <HeroContainer style={{ backgroundImage: `url("${heroImg}")` }}>
+    <BackgroundSectionStyled imageName={imgName}>
       <TitleContainer>
         <HeroTitle>{props.title}</HeroTitle>
         {props.subTitle && <HeroSubTitle>{props.subTitle}</HeroSubTitle>}
       </TitleContainer>
-    </HeroContainer>
+    </BackgroundSectionStyled>
   )
 }
 
