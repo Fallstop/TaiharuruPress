@@ -3,7 +3,7 @@ module.exports = {
   siteDescription: 'A small publisher based in Taiharuru, Aotearoa New Zealand',
   authorName: 'Barbara Carr',
   twitterUsername: '_maxpou',
-  authorAvatar: 'avatar.jpeg', // file in content/images
+  authorAvatar: 'barbra.jpg', // file in content/images
   defaultLang: 'en', // show flag if lang is not default. Leave empty to enable flags in post lists
   authorDescription: `
   Barbara Carr has lived in Te Tai Tokerau (Northland New Zealand) for 20 years.  She has loved writing since her childhood and as an adult has won awards for her short stories.  With a Bachelor of Arts in Anthropology and History, Barbara is interested in how the past echoes through time.  She is a humanist and an environmentalist.
@@ -37,8 +37,8 @@ module.exports = {
   ],
   // Footer information (ex: Github, Netlify...)
   websiteHost: {
-    name: 'GitHub',
-    url: 'https://github.com',
+    name: 'Cloudflare',
+    url: 'https://pages.cloudflare.com/',
   },
   footerLinks: [
     {
