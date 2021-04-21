@@ -24,7 +24,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --write 'src/**/*.js' 'data/siteConfig.js' 'gatsby-*.js' 'scripts/*.js'",
-    "generatePostPreviewImages": "./scripts/generatePostPreviewImages.js",
+    "generatePostPreviewImages": "node ./scripts/generatePostPreviewImages.js",
     "lh": "lighthousebot",
     "semantic-release": "semantic-release",
     "start": "gatsby develop",

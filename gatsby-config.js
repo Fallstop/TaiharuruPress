@@ -1,6 +1,5 @@
 const path = require('path')
 const config = require('./data/siteConfig')
-
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
