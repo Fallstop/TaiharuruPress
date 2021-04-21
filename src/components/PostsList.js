@@ -9,6 +9,8 @@ const PostsList = ({ posts }) => {
   return (
     <Fragment>
       {posts.map(post => {
+        console.log("post.node.frontmatter",post.node.frontmatter)
+        console.log("post.node.frontmatter.cover",post.node.frontmatter.cover)
         const props = {
           title: post.node.frontmatter.title,
           excerpt: post.node.excerpt,
@@ -16,6 +18,7 @@ const PostsList = ({ posts }) => {
           timeToRead: post.node.timeToRead,
           language: post.node.frontmatter.language || defaultLang,
           tags: post.node.frontmatter.tags || [],
+          coverImage: post.node.frontmatter.cover
         }
         return <PostsListItem key={props.slug} {...props} />
       })}

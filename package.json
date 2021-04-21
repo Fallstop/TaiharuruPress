@@ -1,15 +1,7 @@
 {
   "name": "taiharuru-press",
   "version": "0.0.0-development",
-  "description": "A Gatsby theme/starter to build lightning-fast blog/websites",
-  "homepage": "https://github.com/maxpou/gatsby-starter-morning-dew#readme",
-  "bugs": {
-    "url": "https://github.com/maxpou/gatsby-starter-morning-dew/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/maxpou/gatsby-starter-morning-dew.git"
-  },
+  "description": "Website for Taiharuru Press.",
   "license": "private",
   "main": "n/a",
   "scripts": {
