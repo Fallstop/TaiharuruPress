@@ -56,9 +56,7 @@ const BackgroundSection = ({ className, imageName, children }) => {
   // Set ImageData.
   const imageData = image.node.childImageSharp.fluid;
 
-  // const imageData = result.desktop.childImageSharp.fluid
-
-  console.log(imageData);
+  
 
   return (
     <BackgroundImage
@@ -77,7 +75,7 @@ const BackgroundSectionStyled = styled(BackgroundSection)`
   position: relative;
   display: table;
   width: 100%;
-  height: 600px;
+  height: 500px;
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
@@ -96,19 +94,18 @@ const HeroTitle = styled.h1`
   font-size: 3rem;
   margin: 10px 50px;
   color: var(--color-white);
-  text-shadow: 1px 1px 4px rgba(34, 34, 34, 0.85);
+  text-shadow: 2px 2px 8px rgb(0, 0, 0);
 `
 
 const HeroSubTitle = styled.h2`
   margin: 10px 50px;
   color: var(--color-white);
-  text-shadow: 1px 1px 4px rgba(34, 34, 34, 0.85);
+  text-shadow: 2px 2px 8px rgb(0, 0, 0);
 `
 
 const Hero = props => {
   const { siteCover } = useSiteMetadata()
   const imgName = props.heroImg || siteCover;
-  console.log("props.heroImg",props.heroImg)
   return (
     <BackgroundSectionStyled imageName={imgName}>
       <TitleContainer>

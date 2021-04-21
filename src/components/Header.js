@@ -8,6 +8,8 @@ import { media } from '../tokens';
 import useSiteImages from '../hooks/use-site-images';
 import DarkToggle from './DarkToggle';
 
+import SVGLogo  from "/content/images/logo.svg";
+
 const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
@@ -73,10 +75,10 @@ const HeaderLinkTitleContent = styled.span`
   padding-left: 0;
 `;
 
-const HeaderSVG = styled.svg`
+const HeaderSVG = styled.img`
   padding: 4px;
   height: 57px;
-  
+  margin-right: 8px;
 `;
 
 const MobilePanel = styled.div`
@@ -230,6 +232,7 @@ const Header = () => {
     headerTitle,
     headerLinksIcon,
   } = useSiteMetadata();
+  
 
   return (
     <HeaderWrapper>
@@ -238,14 +241,15 @@ const Header = () => {
           Skip to main content
         </SkipMainContent>
         <HeaderLinkTitle to={`/`} aria-label={`View home page`}>
-          <HeaderSVG data-name="Layer 1" viewBox="0 0 603.26 786.07">
+          {/* <HeaderSVG data-name="Layer 1" viewBox="0 0 603.26 786.07">
               <defs>
                 <linearGradient id="linear-gradient" x1="517.36" y1="906.81" x2="517.36" y2="120.74" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#006994" /><stop offset="1" stopColor="#2697ff" /></linearGradient>
               </defs>
               <title>Logosvg</title>
               <path style={{ fill: "url(#linear-gradient)" }} d="M819,605.18c0,166.59-135,301.63-301.63,301.63s-301.63-135-301.63-301.63S517.36,120.74,517.36,120.74,819,438.59,819,605.18Z" transform="translate(-215.73 -120.74)" />
-              {/* <path style={{ fill: "#fff" }} d="MM658.47,449.06l3.66,77.63h-9.28q-2.69-20.51-7.32-29.29-7.57-14.16-20.14-20.88t-33.08-6.71H545.68V722.74q0,30.51,6.59,38.08,9.27,10.26,28.56,10.26h11.48v9H451.93v-9h11.72q21,0,29.78-12.7,5.37-7.82,5.37-35.64V469.81H459q-23.2,0-33,3.42-12.71,4.63-21.73,17.82t-10.74,35.64H384.3l3.91-77.63Z" transform="translate(-215.73 -120.74)" /> */}
-          </HeaderSVG>
+              <path style={{ fill: "#fff" }} d="MM658.47,449.06l3.66,77.63h-9.28q-2.69-20.51-7.32-29.29-7.57-14.16-20.14-20.88t-33.08-6.71H545.68V722.74q0,30.51,6.59,38.08,9.27,10.26,28.56,10.26h11.48v9H451.93v-9h11.72q21,0,29.78-12.7,5.37-7.82,5.37-35.64V469.81H459q-23.2,0-33,3.42-12.71,4.63-21.73,17.82t-10.74,35.64H384.3l3.91-77.63Z" transform="translate(-215.73 -120.74)" />
+          </HeaderSVG> */}
+          <HeaderSVG src={SVGLogo} alt="Taiharuru Press Logo" />
           <HeaderLinkTitleContent>{headerTitle}</HeaderLinkTitleContent>
         </HeaderLinkTitle>
         <HeaderLinksContainer>

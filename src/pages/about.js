@@ -30,6 +30,8 @@ const NotFoundPage = props => {
       <Wrapper>
       <SubTitle>Taiharuru Press is located in one of New Zealand's special places</SubTitle>
         <Text>
+          <b>About info here</b>
+          <br/>
         With its natural fortifications and abundant food sources Whangarei Heads was an important area from Maori from earliest times and rich in history. The area was one of the earliest to be settled by Europeans.
 <br/>
 Following turbulent years of Maori occupation by a number tribes, the Whangarei Heads area was one of the earliest in New Zealand to be settled by Europeans. Captain Cook named many surrounding landmarks when exploring the area in 1769.

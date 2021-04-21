@@ -1,20 +1,26 @@
-import React, { Fragment } from 'react'
-import { Link } from 'gatsby'
-import Flag from './Flag'
-import TagList from './TagList'
-import useSiteMetadata from '../hooks/use-site-config'
-import useSiteImages from '../hooks/use-site-images'
-import styled from 'styled-components'
-import { Bull, ReadingTime } from './Commons'
+import React, { Fragment } from 'react';
+import { Link } from 'gatsby';
+import Flag from './Flag';
+import TagList from './TagList';
+import useSiteMetadata from '../hooks/use-site-config';
+import useSiteImages from '../hooks/use-site-images';
+import styled from 'styled-components';
+import { Bull, ReadingTime } from './Commons';
 
 
 const PreviewContainer = styled.aside`
+width: 20em;
+height: 30em;
+margin-bottom: 2em;
+@media (max-width: 780px) {
+  width: 100%;
+  margin-bottom: 1em;
 
-
-`
+}
+`;
 
 const Preview = styled.article`
-margin: 0px 2em 30px 2em;
+  margin: 0px 2em 30px 2em;
   cursor: pointer;
 
   box-shadow: 0 0 0 0, 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -28,25 +34,22 @@ margin: 0px 2em 30px 2em;
   }
 
 
-`
+`;
 
 const PreviewCover = styled.div`
-
-  height: 30em;
+height: 30em;
   background: #c5d2d9 no-repeat 50%;
   background-size: cover;
   border-radius: 5px;
-  width: 20em;
+
+
   
   position: relative;
-  @media (max-width: 780px) {
-    width: 100%;
-    padding: 25px;
-  }
-`
+  
+`;
 
 const PreviewContent = styled.div`
-position: absolute;
+  position: absolute;
   bottom: 0;
   padding: 20px;
   flex: 1 1 300px;
@@ -72,11 +75,11 @@ position: absolute;
     font-size: 0.8em;
   }
   height: auto;
-`
+`;
 
 const PostsListItem = props => {
   // const { title, excerpt, slug, language, tags, timeToRead, coverImage } = props
-  const { defaultLang } = useSiteMetadata()
+  const { defaultLang } = useSiteMetadata();
   const {
     tags,
     coverImage,
@@ -85,44 +88,43 @@ const PostsListItem = props => {
     language,
     excerpt,
     timeToRead
-  } = props
-  const { siteCover } = useSiteMetadata()
-  const { fluid } = useSiteImages(siteCover)
-  console.log("coverImage",coverImage)
-  const heroImg = (coverImage && coverImage.publicURL) || fluid.src
+  } = props;
+  const { siteCover } = useSiteMetadata();
+  const { fluid } = useSiteImages(siteCover);
+  const heroImg = (coverImage && coverImage.publicURL) || fluid.src;
   return (
-<Fragment>
+    <Fragment>
 
       <PreviewContainer>
-      
 
-            <Preview >
 
-              <Link to={`/${slug}`} aria-label={`View ${title} article`}>
-              <PreviewCover
-                    style={{ backgroundImage: `url("${heroImg}")` }}
-                    >
-                <PreviewContent>
-                  <header>
-                    <h2>
-                      {defaultLang !== language && <Flag language={language} />}
-                      {title}
-                    </h2>
-                  </header>
-                  <section>
-                    <p>{excerpt}</p>
-                  </section>
-                  <footer>
-                    <ReadingTime min={timeToRead} />
-                  </footer>
-                </PreviewContent>
-                </PreviewCover>
-              </Link>
-            </Preview>
+        <Preview >
+
+          <Link to={`/${slug}`} aria-label={`View ${title} article`}>
+            <PreviewCover
+              style={{ backgroundImage: `url("${heroImg}")` }}
+            >
+              <PreviewContent>
+                <header>
+                  <h2>
+                    {defaultLang !== language && <Flag language={language} />}
+                    {title}
+                  </h2>
+                </header>
+                <section>
+                  <p>{excerpt}</p>
+                </section>
+                <footer>
+                  <ReadingTime min={timeToRead} />
+                </footer>
+              </PreviewContent>
+            </PreviewCover>
+          </Link>
+        </Preview>
 
       </PreviewContainer>
 
     </Fragment>
-  )
-}
-export default PostsListItem
+  );
+};
+export default PostsListItem;

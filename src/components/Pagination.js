@@ -76,6 +76,7 @@ const Spacer = styled.span`
   }
 `
 
+
 const PageInfo = styled.span`
   order: 2;
   padding: 1em 0;
@@ -87,12 +88,12 @@ const PageInfo = styled.span`
 class Pagination extends React.Component {
   render() {
     const { currentPage, nbPages } = this.props
-    const previousUrl = currentPage === 2 ? '/' : `/pages/${currentPage - 1}`
+    const previousUrl = (currentPage === 2 ? '/' : `/pages/${currentPage - 1}`) + "#booklistSection"
 
     return (
       <PaginationWrapper>
         {currentPage !== 1 ? (
-          <PreviousBtn to={previousUrl}>‹ Newer posts</PreviousBtn>
+          <PreviousBtn to={previousUrl}>‹ Newer Books</PreviousBtn>
         ) : (
           <Spacer className="previous" />
         )}
@@ -102,7 +103,7 @@ class Pagination extends React.Component {
         </PageInfo>
 
         {currentPage < nbPages ? (
-          <NextBtn to={`/pages/${currentPage + 1}`}>Older posts ›</NextBtn>
+          <NextBtn to={`/pages/${currentPage + 1}#booklistSection`}>Older Books ›</NextBtn>
         ) : (
           <Spacer className="next" />
         )}

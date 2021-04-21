@@ -2,7 +2,7 @@
   "name": "taiharuru-press",
   "version": "0.0.0-development",
   "description": "Website for Taiharuru Press.",
-  "license": "private",
+  "license": "UNLICENSED",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",

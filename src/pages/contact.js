@@ -94,7 +94,6 @@ color: var(--color-textLink);
 
 function ContactForm() {
   const [state, handleSubmit] = useForm("myylzbkj");
-  console.log("state",state)
   if (state.succeeded) {
     return <SubTitle>Sent! Thanks for contacting us.</SubTitle>;
   }

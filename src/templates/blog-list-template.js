@@ -6,7 +6,18 @@ import Wrapper from '../components/Wrapper'
 import Hero from '../components/Hero'
 import PostsList from '../components/PostsList'
 import Pagination from '../components/Pagination'
+import styled from 'styled-components'
 import SEO from '../components/SEO'
+
+const MainTitle = styled.h1`
+  line-height: 1.5;
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 40px;
+  line-height: 1.2;
+  border-top: 1px solid #ececec;
+  margin-top: 44px;
+`
 
 class BlogList extends React.Component {
   render() {
@@ -18,8 +29,9 @@ class BlogList extends React.Component {
       <Layout location={this.props.location}>
         <SEO />
         <Hero title={title} subTitle={description} />
-
-        <Wrapper>
+        <MainTitle id="booklistSection">Our Books</MainTitle>
+        <Wrapper >
+          
           <PostsList posts={posts} />
         </Wrapper>
 
