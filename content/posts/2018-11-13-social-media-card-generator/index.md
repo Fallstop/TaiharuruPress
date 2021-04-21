@@ -45,12 +45,12 @@ Gatsby will first create extra url suffixed by `/image_share` (i.e. *http://loca
 find ./content -name "*-share.png" -type f -delete
 ```
 
-If you want to skip the file generation for some posts, add `generate-card: false` to the post's header.
+If you want to skip the file generation for some posts, add `generateCard: false` to the post's header.
 
 ```yaml
 ---
 title: My blog post
 # ...
-generate-card: false
+generateCard: false
 ---
 ```

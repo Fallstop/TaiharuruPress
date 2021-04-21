@@ -6,7 +6,7 @@ date: 2020-01-01
 # optional fields
 published: false
 unlisted: true
-generate-card: false
+generateCard: false
 language: fr
 cover: ./cover.jpeg
 imageShare: ./cover.jpeg

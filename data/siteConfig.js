@@ -23,16 +23,12 @@ module.exports = {
   headerLinksIcon: 'logo.svg', //  (leave empty to disable: '')
   headerLinks: [
     {
-      label: 'Home',
+      label: 'Books',
       url: '/',
     },
     {
       label: 'About',
       url: '/about',
-    },
-    {
-      label: 'Books',
-      url: '/books',
     },
     {
       label: 'Contant Us',

@@ -3,7 +3,7 @@ title: "Big Test"
 slug: big-test
 date: 2018-01-03
 language: en
-generate-card: false
+generateCard: false
 tags:
   - test
   - huge

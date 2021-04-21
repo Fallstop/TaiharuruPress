@@ -30,6 +30,10 @@ export const COLORS = {
     light: colors.blueGreyed,
     dark: '#c6d8e0',
   },
+  textLink: {
+    light: "#0e64ed",
+    dark: "#4f93ff",
+  },
   siteBackground: {
     light: '#f4f8fb',
     dark: colors.grey500,

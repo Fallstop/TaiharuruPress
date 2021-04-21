@@ -3,7 +3,8 @@ title: From the bottom of the welll
 slug: from-the-bottom-of-the-well
 cover: ./cover.jpg
 highlightPhoto: ./cover.jpg
-generate-card: false
+purchaseLink: https://example.org/
+generateCard: false
 date: 2020-11-21
 language: en
 ---
