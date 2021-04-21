@@ -9,27 +9,17 @@ import { Bull, ReadingTime } from './Commons'
 
 
 const PreviewContainer = styled.aside`
-  display: flex;
-  flex-wrap: wrap;
-  width: 20em;
 
-  margin: 0px 2em 30px 2em;
-  top: 20px;
-  position: relative;
 
-  @media (max-width: 780px) {
-    width: 100%;
-    padding: 25px;
-  }
 `
 
 const Preview = styled.article`
+margin: 0px 2em 30px 2em;
   cursor: pointer;
-  flex: 1 1 300px;
-  background-color: var(--color-secondaryContentBackground);
+
   box-shadow: 0 0 0 0, 0 6px 12px rgba(0, 0, 0, 0.1);
-  margin: 20px 20px;
-  border-radius: 5px;
+  
+
 
   &:hover {
     box-shadow: 0 0 0 0, 0 6px 12px var(--color-grey300);
@@ -37,6 +27,33 @@ const Preview = styled.article`
     transform: translate3D(0, -1px, 0);
   }
 
+
+`
+
+const PreviewCover = styled.div`
+
+  height: 20em;
+  background: #c5d2d9 no-repeat 50%;
+  background-size: cover;
+  border-radius: 5px;
+  width: 20em;
+  
+  position: relative;
+  @media (max-width: 780px) {
+    width: 100%;
+    padding: 25px;
+  }
+`
+
+const PreviewContent = styled.div`
+position: absolute;
+  bottom: 0;
+  padding: 20px;
+  flex: 1 1 300px;
+  background-color: var(--color-secondaryContentBackgroundTransparent);
+  
+
+  border-radius: 5px;
   @media (min-width: 780px) {
     &:first-child {
       margin-left: 0;
@@ -45,19 +62,6 @@ const Preview = styled.article`
       margin-right: 0;
     }
   }
-`
-
-const PreviewCover = styled.div`
-
-  height: 4em;
-  background: #c5d2d9 no-repeat 50%;
-  background-size: cover;
-  border-radius: 5px 5px 0 0;
-`
-
-const PreviewContent = styled.div`
-  padding: 20px;
-
   header {
     padding: 0 0 10px 0;
   }
@@ -67,6 +71,7 @@ const PreviewContent = styled.div`
   footer {
     font-size: 0.8em;
   }
+  height: auto;
 `
 
 const PostsListItem = props => {
@@ -87,12 +92,16 @@ const PostsListItem = props => {
   const heroImg = (coverImage && coverImage.publicURL) || fluid.src
   return (
 <Fragment>
+
       <PreviewContainer>
+      
+
             <Preview >
+
               <Link to={`/${slug}`} aria-label={`View ${title} article`}>
-                <PreviewCover
-                  style={{ backgroundImage: `url("${heroImg}")` }}
-                />
+              <PreviewCover
+                    style={{ backgroundImage: `url("${heroImg}")` }}
+                    >
                 <PreviewContent>
                   <header>
                     <h2>
@@ -107,9 +116,12 @@ const PostsListItem = props => {
                     <ReadingTime min={timeToRead} />
                   </footer>
                 </PreviewContent>
+                </PreviewCover>
               </Link>
             </Preview>
+
       </PreviewContainer>
+
     </Fragment>
   )
 }

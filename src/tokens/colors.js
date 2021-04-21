@@ -42,6 +42,10 @@ export const COLORS = {
     light: '#f7f7f7',
     dark: '#3a3a3a',
   },
+  secondaryContentBackgroundTransparent: {
+    light: 'rgba(247, 247, 247,0.8)',
+    dark: 'rgba(58, 58, 58,0.8)',
+  },
   wrapperShadow: {
     light: '#0000001a',
     dark: '#00000000',
