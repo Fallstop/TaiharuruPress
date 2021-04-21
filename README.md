@@ -1,152 +1,236 @@
-# sapper-template
+<h1 align="center">gatsby-starter-morning-dew</h1>
 
-The default template for setting up a [Sapper](https://github.com/sveltejs/sapper) project. Can use either Rollup or webpack as bundler.
+<p align="center">
+  🚀 A gatsby-starter-morning-dew is a Gatsby starter to build lightning-fast websites!
+</p>
+
+<p align="center">
+  <strong>
+    <a href="https://maxpou.github.io/gatsby-starter-morning-dew/">Demo</a>
+  </strong>
+</p>
+
+<p align="center">
+  <a href="https://travis-ci.com/maxpou/gatsby-starter-morning-dew">
+    <img
+      alt="Build Status"
+      src="https://travis-ci.com/maxpou/gatsby-starter-morning-dew.svg?branch=master">
+  </a>
+	<a href="https://app.netlify.com/sites/gatsby-starter-morning-dew/deploys">
+    <img
+      alt="Netlify Status"
+      src="https://api.netlify.com/api/v1/badges/d68027bd-19b5-44fd-a2a3-d1f05fc8201e/deploy-status">
+  </a>
+	<a href="https://codeclimate.com/github/maxpou/gatsby-starter-morning-dew/maintainability">
+    <img
+      alt="Maintainability"
+      src="https://api.codeclimate.com/v1/badges/e09f1ac1a5cdb2987a6f/maintainability">
+  </a>
+	<a href="https://github.com/semantic-release/semantic-release">
+    <img
+      alt="semantic-release"
+      src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg">
+  </a>
+  <a href="https://npm-stat.com/charts.html?package=gatsby-starter-morning-dew&from=2018-02-12">
+    <img
+      alt="Total downloads on npm"
+      src="https://img.shields.io/npm/dy/gatsby-starter-morning-dew.svg?colorA=333a41&colorB=007dc7&maxAge=3600&label=Downloads">
+  <a>
+</p>
+
+<p align="center">
+  <img src="https://i.imgur.com/FXkc88D.png" alt="screenshot">
+</p>
+
+## Features
+
+- [:purple_heart: Gatsby 3](https://www.gatsbyjs.org/) / React 16
+- :mag: SEO optimized
+- :love_letter: Write posts/pages in Markdown or [MDX](https://mdxjs.com/)
+  - :art: Code syntax highlight
+  - :books: Multilang support/i18n (blog post)
+- :iphone: Mobile Friendly (Responsive design)
+- :last_quarter_moon_with_face: Dark mode
+- :sparkles: PWA ready
+  - :airplane: Offline support
+  - :page_with_curl: Manifest support 
+- [:wrench: Fully configurable (see data/siteConfig.js)](./data/siteConfig.js)
+- :speech_balloon: Disqus support
+- :nail_care: css-in-js (with [styled-components v5](https://www.styled-components.com))
+- :bookmark: Groups post with tags
+- :bird: post preview image generation (Twitter, Facebook...)
+- :gem: Developer tools:
+  - eslint
+  - prettier
+- :construction_worker: Travis CI support
 
 
-## Getting started
+![Lighthouse scores](https://i.imgur.com/Y6bFKFj.png)
 
+## Installation (starter)
 
-### Using `degit`
-
-To create a new Sapper project based on Rollup locally, run
-
+* with Gatsby-cli: 
+  
 ```bash
-npx degit "sveltejs/sapper-template#rollup" my-app
+npm install --global gatsby-cli
+gatsby new gatsby-blog https://github.com/maxpou/gatsby-starter-morning-dew
 ```
 
-For a webpack-based project, instead run
+* without Gatsby-cli
 
 ```bash
-npx degit "sveltejs/sapper-template#webpack" my-app
+git clone my-site git@github.com:maxpou/gatsby-starter-morning-dew.git
+cd my-site
+npm install
 ```
 
-[`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository.
-
-Replace `my-app` with the path where you wish to create the project.
+Then run `npm run develop` to try it locally.
 
 
-### Using GitHub templates
+## Installation (theme)
 
-Alternatively, you can create the new project as a GitHub repository using GitHub's template feature.
+You can also use `gatsby-starter-morning-dew` as a [Gatsby theme](https://www.gatsbyjs.org/blog/2018-11-11-introducing-gatsby-themes/)!
 
-Go to either [sapper-template-rollup](https://github.com/sveltejs/sapper-template-rollup) or [sapper-template-webpack](https://github.com/sveltejs/sapper-template-webpack) and click on "Use this template" to create a new project repository initialized by the template.
+1. Add the theme
+  ```bash
+  npm install gatsby-starter-morning-dew
+  ```
+2. In your `gatsby-config.js`, add:
+  ```js
+  const config = require('./data/siteConfig')
+  // ...
+  plugins: [
+      {
+        resolve: "gatsby-starter-morning-dew",
+        options: {},
+      },
+      {
+        resolve: `gatsby-plugin-manifest`,
+        options: {
+          name: config.siteTitle,
+          short_name: config.siteTitle,
+          start_url: config.pathPrefix,
+          background_color: config.background_color,
+          theme_color: config.theme_color,
+          display: config.display,
+          icon: 'content/images/company-icon.png', // path to your image
+        },
+      },
+  ],
+  ```
+3. Add an image called `baymax.png` in `content/images/baymax.png`.  
+🐞This is due to a theme limitations.  
+😬 Don't worry, this picture will not appear on your website!
+
+Need more details? Checkout:
+* [maxpou.fr source](https://github.com/maxpou/maxpou.fr): Maxence Poutord's personnal blog;
+* [gatsby-groot source](https://github.com/maxpou/gatsby-groot/): a minimalist blog that use this template!
 
 
-### Running the project
+## Commands
 
-Once you have created the project, install dependencies and run the project in development mode:
-
-```bash
-cd my-app
-npm install # or yarn
+```sh
+# working locally
 npm run dev
+
+# generate build
+npm run build
+
+# format code
+npm run format
+
+# lint code
+npm run lint
+
+# Generate generate post preview images (npm run dev need to run before)
+npm run generatePostPreviewImages
 ```
 
-This will start the development server on [localhost:3000](http://localhost:3000). Open it and click around.
+**:warning: Add `--prefix-paths` if you are using path prefix!**
 
-You now have a fully functional Sapper project! To get started developing, consult [sapper.svelte.dev](https://sapper.svelte.dev).
-
-### Using TypeScript
-
-By default, the template uses plain JavaScript. If you wish to use TypeScript instead, you need some changes to the project:
-
- * Add `typescript` as well as typings as dependences in `package.json`
- * Configure the bundler to use [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess) and transpile the TypeScript code.
- * Add a `tsconfig.json` file
- * Update the project code to TypeScript
-
-The template comes with a script that will perform these changes for you by running
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-`@sapper` dependencies are resolved through `src/node_modules/@sapper`, which is created during the build. You therefore need to run or build the project once to avoid warnings about missing dependencies.
-
-The script does not support webpack at the moment.
-
-## Directory structure
-
-Sapper expects to find two directories in the root of your project —  `src` and `static`.
-
-
-### src
-
-The [src](src) directory contains the entry points for your app — `client.js`, `server.js` and (optionally) a `service-worker.js` — along with a `template.html` file and a `routes` directory.
-
-
-#### src/routes
-
-This is the heart of your Sapper app. There are two kinds of routes — *pages*, and *server routes*.
-
-**Pages** are Svelte components written in `.svelte` files. When a user first visits the application, they will be served a server-rendered version of the route in question, plus some JavaScript that 'hydrates' the page and initialises a client-side router. From that point forward, navigating to other pages is handled entirely on the client for a fast, app-like feel. (Sapper will preload and cache the code for these subsequent pages, so that navigation is instantaneous.)
-
-**Server routes** are modules written in `.js` files, that export functions corresponding to HTTP methods. Each function receives Express `request` and `response` objects as arguments, plus a `next` function. This is useful for creating a JSON API, for example.
-
-There are three simple rules for naming the files that define your routes:
-
-* A file called `src/routes/about.svelte` corresponds to the `/about` route. A file called `src/routes/blog/[slug].svelte` corresponds to the `/blog/:slug` route, in which case `params.slug` is available to the route
-* The file `src/routes/index.svelte` (or `src/routes/index.js`) corresponds to the root of your app. `src/routes/about/index.svelte` is treated the same as `src/routes/about.svelte`.
-* Files and directories with a leading underscore do *not* create routes. This allows you to colocate helper modules and components with the routes that depend on them — for example you could have a file called `src/routes/_helpers/datetime.js` and it would *not* create a `/_helpers/datetime` route.
-
-
-#### src/node_modules/images
-
-Images added to `src/node_modules/images` can be imported into your code using `import 'images/<filename>'`. They will be given a dynamically generated filename containing a hash, allowing for efficient caching and serving the images on a CDN.
-
-See [`index.svelte`](src/routes/index.svelte) for an example.
-
-
-#### src/node_modules/@sapper
-
-This directory is managed by Sapper and generated when building. It contains all the code you import from `@sapper` modules.
-
-
-### static
-
-The [static](static) directory contains static assets that should be served publicly. Files in this directory will be available directly under the root URL, e.g. an `image.jpg` will be available as `/image.jpg`.
-
-The default [service-worker.js](src/service-worker.js) will preload and cache these files, by retrieving a list of `files` from the generated manifest:
+## Configure
 
 ```js
-import { files } from '@sapper/service-worker';
+module.exports = {
+  siteTitle: 'gatsby-starter-morning-dew',
+  siteDescription: 'A Gatsby theme/starter to build lightning-fast websites',
+  authorName: 'Maxence Poutord',
+  twitterUsername: '_maxpou',
+  authorAvatar: 'avatar.jpeg', // file in content/images
+  defaultLang: 'en', // show flag if lang is not default. Leave empty to enable flags in post lists
+  authorDescription: `
+  For the last decade, Maxence Poutord has worked with a variety of web technologies. He is currently focused on front-end development.
+  On his day to day job, he is working as a senior front-end engineer at VSware. He is also a frequent tech speaker and a mentor.
+  As a new digital nomad, he is living where the WIFI and sun is 😎 <br>
+  Do you want to know more? <a href="https://www.maxpou.fr/about" target="_blank">Visit my website!</a>
+  `,
+  siteUrl: 'https://maxpou.github.io/',
+  disqusSiteUrl: 'https://www.maxpou.fr/',
+  // Prefixes all links. For cases when deployed to maxpou.fr/gatsby-starter-morning-dew/
+  pathPrefix: '/gatsby-starter-morning-dew', // Note: it must *not* have a trailing slash.
+  siteCover: 'cover-baymax.jpeg', // file in content/images
+  background_color: '#ffffff',
+  theme_color: '#222222',
+  display: 'standalone',
+  icon: 'content/images/baymax.png',
+  postsPerPage: 6,
+  disqusShortname: 'maxpou',
+  headerTitle: 'gatsby-starter-morning-dew',
+  headerLinksIcon: 'baymax.png', // file in content/images (leave empty to disable: '')
+  headerLinks: [
+    {
+      label: 'Blog',
+      url: '/',
+    },
+    {
+      label: 'About',
+      url: '/about-gatsby-starter-morning-dew',
+    },
+    {
+      label: 'Installation',
+      url: '/how-to-install',
+    },
+  ],
+  // Footer information (ex: Github, Netlify...)
+  websiteHost: {
+    name: 'GitHub',
+    url: 'https://github.com',
+  },
+  footerLinks: [
+    {
+      sectionName: 'Explore',
+      links: [
+        {
+          label: 'Blog',
+          url: '/',
+        },
+        {
+          label: 'About',
+          url: '/about-gatsby-starter-morning-dew',
+        },
+        {
+          label: 'Installation',
+          url: '/how-to-install',
+        },
+      ],
+    },
+    {
+      sectionName: 'Follow the author',
+      links: [
+        {
+          label: 'Github',
+          url: 'https://github.com/maxpou/gatsby-starter-morning-dew',
+        },
+        {
+          label: 'Website',
+          url: 'https://www.maxpou.fr',
+        },
+        {
+          label: 'Twitter',
+          url: 'https://twitter.com/_maxpou',
+        },
+      ],
+    },
+  ],
+}
 ```
-
-If you have static files you do not want to cache, you should exclude them from this list after importing it (and before passing it to `cache.addAll`).
-
-Static files are served using [sirv](https://github.com/lukeed/sirv).
-
-
-## Bundler configuration
-
-Sapper uses Rollup or webpack to provide code-splitting and dynamic imports, as well as compiling your Svelte components. With webpack, it also provides hot module reloading. As long as you don't do anything daft, you can edit the configuration files to add whatever plugins you'd like.
-
-
-## Production mode and deployment
-
-To start a production version of your app, run `npm run build && npm start`. This will disable live reloading, and activate the appropriate bundler plugins.
-
-You can deploy your application to any environment that supports Node 10 or above. As an example, to deploy to [Vercel Now](https://vercel.com) when using `sapper export`, run these commands:
-
-```bash
-npm install -g vercel
-vercel
-```
-
-If your app can't be exported to a static site, you can use the [now-sapper](https://github.com/thgh/now-sapper) builder. You can find instructions on how to do so in its [README](https://github.com/thgh/now-sapper#basic-usage).
-
-
-## Using external components
-
-When using Svelte components installed from npm, such as [@sveltejs/svelte-virtual-list](https://github.com/sveltejs/svelte-virtual-list), Svelte needs the original component source (rather than any precompiled JavaScript that ships with the component). This allows the component to be rendered server-side, and also keeps your client-side app smaller.
-
-Because of that, it's essential that the bundler doesn't treat the package as an *external dependency*. You can either modify the `external` option under `server` in [rollup.config.js](rollup.config.js) or the `externals` option in [webpack.config.js](webpack.config.js), or simply install the package to `devDependencies` rather than `dependencies`, which will cause it to get bundled (and therefore compiled) with your app:
-
-```bash
-npm install -D @sveltejs/svelte-virtual-list
-```
-
-
-## Bugs and feedback
-
-Sapper is in early development, and may have the odd rough edge here and there. Please be vocal over on the [Sapper issue tracker](https://github.com/sveltejs/sapper/issues).

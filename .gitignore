@@ -1,8 +1,8 @@
+node_modules/
+public
+.gatsby-context.js
 .DS_Store
-/node_modules/
-/src/node_modules/@sapper/
-yarn-error.log
-/__sapper__/
-.idea/
-.vscode/
-.yarn/
+.intermediate-representation/
+.cache/
+yarn.lock
+package-lock.json
