@@ -45,7 +45,7 @@ module.exports = {
       sectionName: 'Explore',
       links: [
         {
-          label: 'Home',
+          label: 'Books',
           url: '/',
         },
         {
@@ -53,32 +53,8 @@ module.exports = {
           url: '/about',
         },
         {
-          label: 'Books',
-          url: '/books',
-        },
-        {
           label: 'Contant Us',
           url: '/contact',
-        },
-      ],
-    },
-    {
-      sectionName: 'Follow the author',
-      links: [
-        {
-          label: 'GitHub',
-          url: 'https://github.com/maxpou/gatsby-starter-morning-dew',
-          rel: 'external',
-        },
-        {
-          label: 'Website',
-          url: 'https://www.maxpou.fr',
-          rel: 'external',
-        },
-        {
-          label: 'Twitter',
-          url: 'https://twitter.com/_maxpou',
-          rel: 'external',
         },
       ],
     },

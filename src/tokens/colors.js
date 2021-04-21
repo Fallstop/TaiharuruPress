@@ -40,7 +40,7 @@ export const COLORS = {
   },
   wrapperBackground: {
     light: colors.white,
-    dark: colors.grey500,
+    dark: colors.grey600,
   },
   secondaryContentBackground: {
     light: '#f7f7f7',
@@ -56,7 +56,7 @@ export const COLORS = {
   },
   primary: {
     light: colors.grey500,
-    dark: colors.grey500,
+    dark: colors.grey700,
   },
   primaryAlpha: {
     light: 'rgba(32, 35, 42, 0.85)',
