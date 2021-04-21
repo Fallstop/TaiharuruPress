@@ -12,7 +12,6 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.post
     const { previous, next } = this.props.pageContext
-
     return (
       <Layout location={this.props.location}>
         <SEO
@@ -27,9 +26,9 @@ class BlogPostTemplate extends React.Component {
           path={post.frontmatter.slug}
           isBlogPost
         />
-
+        
         <Hero
-          heroImg={post.frontmatter.cover && post.frontmatter.cover.publicURL}
+          heroImg={post.frontmatter.highlightPhoto && post.frontmatter.highlightPhoto.publicURL}
           title={post.frontmatter.title}
         />
 
@@ -60,6 +59,9 @@ export const pageQuery = graphql`
         slug
         language
         tags
+        highlightPhoto {
+          publicURL
+        }
         cover {
           publicURL
         }

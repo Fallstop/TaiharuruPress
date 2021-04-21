@@ -1,15 +1,12 @@
 module.exports = {
   siteTitle: 'Taiharuru Press',
-  siteDescription: 'Taiharuru Press, we print the book',
-  authorName: 'Maxence Poutord',
+  siteDescription: 'A small publisher based in Taiharuru, Aotearoa New Zealand',
+  authorName: 'Barbara Carr',
   twitterUsername: '_maxpou',
   authorAvatar: 'avatar.jpeg', // file in content/images
   defaultLang: 'en', // show flag if lang is not default. Leave empty to enable flags in post lists
   authorDescription: `
-  For the last million years, Taiharuru Press has worked with a variety of book technologies. We is currently focused on front-end book development.
-  On his day to day job, he is working as a senior front-end engineer at <b>B O O K</b>. He is also an occasional book reader and a mentor.
-  As a book nomad, we are living where the libarys and sun are 😎 <br>
-  Do you want to know more? <a href="#" rel="noopener" target="_blank">Read my book!</a>
+  Barbara Carr has lived in Te Tai Tokerau (Northland New Zealand) for 20 years.  She has loved writing since her childhood and as an adult has won awards for her short stories.  With a Bachelor of Arts in Anthropology and History, Barbara is interested in how the past echoes through time.  She is a humanist and an environmentalist.
   `,
   siteUrl: 'https://maxpou.github.io/',
   disqusSiteUrl: 'https://www.maxpou.fr/',

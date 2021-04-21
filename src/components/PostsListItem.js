@@ -32,7 +32,7 @@ margin: 0px 2em 30px 2em;
 
 const PreviewCover = styled.div`
 
-  height: 20em;
+  height: 30em;
   background: #c5d2d9 no-repeat 50%;
   background-size: cover;
   border-radius: 5px;

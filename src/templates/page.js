@@ -22,7 +22,7 @@ const Page = props => {
       />
 
       <Hero
-        heroImg={page.frontmatter.cover && page.frontmatter.cover.publicURL}
+        heroImg={page.frontmatter.highlightPhoto && page.frontmatter.highlightPhoto.publicURL}
         title={page.frontmatter.title}
       />
 
@@ -53,6 +53,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         disqus
+        highlightPhoto {
+          publicURL
+        }
         cover {
           publicURL
         }
