@@ -27,10 +27,6 @@ module.exports = {
       url: '/',
     },
     {
-      label: 'About',
-      url: '/about',
-    },
-    {
       label: 'Contant Us',
       url: '/contact',
     },
@@ -47,10 +43,6 @@ module.exports = {
         {
           label: 'Books',
           url: '/',
-        },
-        {
-          label: 'About',
-          url: '/about',
         },
         {
           label: 'Contant Us',
