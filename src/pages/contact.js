@@ -160,7 +160,7 @@ const ContactUsPage = props => {
     <Layout location={props.location} noCover={true}>
       <SEO title="Contact Us" />
       <Hero title="Contact Us" />
-      <Wrapper>
+      <Wrapper style={{display: 'block'}}>
         <SubTitle>Contact us through this form.</SubTitle>
         <ContactForm />
         <SubTitle>Alternitivly, you can contact us here</SubTitle>

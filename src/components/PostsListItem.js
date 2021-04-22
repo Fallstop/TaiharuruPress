@@ -28,9 +28,9 @@ const Preview = styled.article`
 
 
   &:hover {
-    box-shadow: 0 0 0 0, 0 6px 12px var(--color-grey300);
+    box-shadow: 0 0 0 0, 0 6px 12px var(--color-dropDownShadow);
     transition: all 0.3s ease;
-    transform: translate3D(0, -1px, 0);
+    transform: translate3D(0, -2px, 0);
   }
 
 
@@ -46,6 +46,11 @@ height: 30em;
   
   position: relative;
   
+`;
+
+const Date = styled.span`
+color: var(--color-textSecondary);
+font-size: 0.9em;
 `;
 
 const PreviewContent = styled.div`
@@ -87,7 +92,7 @@ const PostsListItem = props => {
     slug,
     language,
     excerpt,
-    timeToRead
+    date,
   } = props;
   const { siteCover } = useSiteMetadata();
   const { fluid } = useSiteImages(siteCover);
@@ -100,7 +105,7 @@ const PostsListItem = props => {
 
         <Preview >
 
-          <Link to={`/${slug}`} aria-label={`View ${title} article`}>
+          <Link to={`/${slug}`} aria-label={`View ${title} book`}>
             <PreviewCover
               style={{ backgroundImage: `url("${heroImg}")` }}
             >
@@ -115,7 +120,10 @@ const PostsListItem = props => {
                   <p>{excerpt}</p>
                 </section>
                 <footer>
-                  <ReadingTime min={timeToRead} />
+                  <Date>
+                    {date.split("T")[0]}
+                  </Date>
+
                 </footer>
               </PreviewContent>
             </PreviewCover>

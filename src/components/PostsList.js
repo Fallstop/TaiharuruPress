@@ -9,11 +9,12 @@ const PostsList = ({ posts }) => {
   return (
     <Fragment>
       {posts.map(post => {
+        console.log(post.node);
         const props = {
           title: post.node.frontmatter.title,
           excerpt: post.node.excerpt,
           slug: post.node.frontmatter.slug,
-          timeToRead: post.node.timeToRead,
+          date: post.node.frontmatter.date,
           language: post.node.frontmatter.language || defaultLang,
           tags: post.node.frontmatter.tags || [],
           coverImage: post.node.frontmatter.cover

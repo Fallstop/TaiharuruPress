@@ -54,6 +54,10 @@ export const COLORS = {
     light: '#0000001a',
     dark: '#00000000',
   },
+  dropDownShadow: {
+    light: colors.grey300,
+    dark: colors.grey800,
+  },
   primary: {
     light: colors.grey500,
     dark: colors.grey700,
