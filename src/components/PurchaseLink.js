@@ -6,6 +6,7 @@ const AmazonLink = styled.div`
     padding: 1rem;
     font-size: 1.2rem;
     width: fit-content;
+    color: white;
     &:hover {
         box-shadow: 0 0 0 0, 0 6px 12px var(--color-dropDownShadow);
         transition: all 0.3s ease;
