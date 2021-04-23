@@ -44,9 +44,8 @@ const BackgroundSection = ({ className, imageName, children }) => {
     console.log(`Unable to find image: ${imageName} (in content/images), using backup process`)
     return (
       <div
-      Tag="section"
       className={className}
-      backgroundColor={`#040e18`}
+      
       style={{ backgroundImage: `url("${imageName}")`}}
     >
       {children}
@@ -60,7 +59,6 @@ const BackgroundSection = ({ className, imageName, children }) => {
 
   return (
     <BackgroundImage
-      Tag="section"
       className={className}
       fluid={imageData}
       backgroundColor={`#040e18`}
@@ -101,6 +99,8 @@ const HeroSubTitle = styled.h2`
   margin: 10px 50px;
   color: var(--color-white);
   text-shadow: 2px 2px 8px rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
 `
 
 const Hero = props => {

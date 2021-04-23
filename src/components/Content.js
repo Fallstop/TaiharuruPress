@@ -157,12 +157,12 @@ const ContentBody = styled.div`
 
 class Content extends React.Component {
   render() {
-    const { content, date, tags, translations } = this.props
+    const { content, date, tags, translations, purchaseLink } = this.props
 
     return (
       <section>
         {(tags || date || translations) && (
-          <ContentHeader date={date} tags={tags} translations={translations} />
+          <ContentHeader date={date} purchaseLink={purchaseLink} tags={tags} translations={translations} />
         )}
 
         <ContentBody>

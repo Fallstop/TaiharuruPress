@@ -129,7 +129,7 @@ const Footer = () => {
           </h3>
           <p className="footer-item-text">
             Made by{' '}
-            <a className="footer-link" href="https://jmw.nz">
+            <a className="footer-link" href="https://jmw.nz" target="_blank" rel="noopener noreferrer">
               Jasper M-W
             </a>
             .

@@ -3,7 +3,7 @@ title: From the bottom of the welll
 slug: from-the-bottom-of-the-well
 cover: ./cover.jpg
 highlightPhoto: ./cover.jpg
-purchaseLink: https://example.org/
+purchaseLink: https://www.amazon.com/Bottom-Well-Weaving-adversity-potential-ebook/dp/B084WZCPRT/ref=mp_s_a_1_1?dchild=1&keywords=from%20the%20bottom%20of%20the%20well%20carr&qid=1619138545&sr=8-1
 generateCard: false
 date: 2020-11-21
 language: en

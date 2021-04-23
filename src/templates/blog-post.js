@@ -6,6 +6,7 @@ import Hero from '../components/Hero'
 import Article from '../components/Article'
 import PrevNextPost from '../components/PrevNextPost'
 import SEO from '../components/SEO'
+import PurchaseLink from '../components/PurchaseLink';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -29,6 +30,7 @@ class BlogPostTemplate extends React.Component {
         <Hero
           heroImg={post.frontmatter.highlightPhoto && post.frontmatter.highlightPhoto.publicURL}
           title={post.frontmatter.title}
+          subTitle={post.frontmatter.purchaseLink && <PurchaseLink link={post.frontmatter.purchaseLink} />}
         />
 
         <Wrapper>
@@ -54,6 +56,7 @@ export const pageQuery = graphql`
         slug
         language
         tags
+        purchaseLink
         highlightPhoto {
           publicURL
         }

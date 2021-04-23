@@ -12,7 +12,7 @@ const colors = {
   grey900: '#131315',
 
   white: '#ffffff',
-  yellow: '#ffdc4e',
+  yellow: '#d9bb41',
   lightYellow: '#f9e892',
   blueGreyed: '#546c77',
   darkBlue: '#022a4b',

@@ -3,7 +3,7 @@ title: Shifting the minds eye
 slug: shifting-the-minds-eye
 cover: ./cover.jpg
 highlightPhoto: ./cover.jpg
-purchaseLink: https://example.org/
+purchaseLink: https://www.amazon.com/Shifting-Minds-Eye-Barbara-Carr/dp/047355108X/ref=mp_s_a_1_1?dchild=1&keywords=shifting%20the%20minds%20eye&qid=1619138626&sr=8-1
 generateCard: false
 date: 2021-05-01
 language: en
