@@ -69,28 +69,6 @@ const ErrorText = styled.h4`
   font-weight: bold;
 `;
 
-const SocialMediaContainer = styled.div`
-  margin: 1em;
-  width 100%;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: repeat(3, 1fr);
-  border: 1px solid var(--color-text);
-  box-sizing: content-box;
-  box-shadow: 0 0 0 0, 0 6px 12px var(--color-wrapperShadow);
-  background-color: var(--color-secondaryContentBackground);
-
-`;
-const SocialMediaCell = styled.div`
-border: 1px solid var(--color-text);
-box-sizing: content-box;
-padding: 0.5rem
-`;
-
-const StyledLink = styled.a`
-text-decoration: underline;
-color: var(--color-textLink);
-`;
 
 function ContactForm() {
   const [state, handleSubmit] = useForm("myylzbkj");
@@ -163,16 +141,6 @@ const ContactUsPage = props => {
       <Wrapper style={{display: 'block'}}>
         <SubTitle>Contact us through this form.</SubTitle>
         <ContactForm />
-        <SubTitle>Alternitivly, you can contact us here</SubTitle>
-        <SocialMediaContainer>
-          <SocialMediaCell style={{gridArea: 1 / 1 / 2 / 2}}><b>Email</b></SocialMediaCell>
-          <SocialMediaCell style={{gridArea: 1 / 2 / 2 / 3}}><StyledLink href="mailto:odette.miller@ngita.co.nz" >odette.miller@ngita.co.nz</StyledLink></SocialMediaCell>
-          <SocialMediaCell style={{gridArea: 2 / 1 / 3 / 2}}><b>Facebook</b></SocialMediaCell>
-          <SocialMediaCell style={{gridArea: 2 / 2 / 3 / 3}}><StyledLink href="https://www.facebook.com/groups/900614100672182" >Taiharuru Press Group</StyledLink></SocialMediaCell>
-          <SocialMediaCell style={{gridArea: 4 / 1 / 5 / 2}}><b>Phone</b></SocialMediaCell>
-          <SocialMediaCell style={{gridArea: 4 / 1 / 5 / 3}}><StyledLink href="tel:0222282762">022 228 2762</StyledLink></SocialMediaCell>
-
-        </SocialMediaContainer>
       </Wrapper>
     </Layout>
   );

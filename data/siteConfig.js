@@ -27,7 +27,7 @@ module.exports = {
       url: '/',
     },
     {
-      label: 'Contant Us',
+      label: 'Contact Us',
       url: '/contact',
     },
   ],
@@ -45,7 +45,7 @@ module.exports = {
           url: '/',
         },
         {
-          label: 'Contant Us',
+          label: 'Contact Us',
           url: '/contact',
         },
       ],

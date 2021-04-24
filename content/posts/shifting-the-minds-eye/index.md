@@ -9,7 +9,6 @@ date: 2021-05-01
 language: en
 ---
 
-# Shifting the minds eye
 Shifting the Mind’s Eye is a captivating collection of short stories spanning the 1950s to the present in Aotearoa New Zealand.
 
 Perspectives shift and change as themes of relationships, personal values, the impacts of war and death are explored.
