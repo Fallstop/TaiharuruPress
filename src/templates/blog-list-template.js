@@ -29,7 +29,7 @@ class BlogList extends React.Component {
       <Layout location={this.props.location}>
         <SEO />
         <Hero title={title} subTitle={description} />
-        <MainTitle id="booklistSection">Our Books</MainTitle>
+        <MainTitle id="booklistSection">Publications</MainTitle>
         <Wrapper >
           
           <PostsList posts={posts} />
