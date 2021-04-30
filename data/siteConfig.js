@@ -27,6 +27,10 @@ module.exports = {
       url: '/',
     },
     {
+      label: 'Mailing List',
+      url: '/mailing',
+    },
+    {
       label: 'Contact Us',
       url: '/contact',
     },
@@ -48,7 +52,11 @@ module.exports = {
           label: 'Contact Us',
           url: '/contact',
         },
+        {
+          label: 'Mailing List',
+          url: '/mailing',
+        },
       ],
     },
   ],
-}
+};

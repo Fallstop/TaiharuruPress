@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import styled from 'styled-components';
 import { useForm, ValidationError } from '@formspree/react';
@@ -14,18 +15,6 @@ border-radius: 5px;
 border: #f2f2f2 2px solid;
 padding: 20px;
 margin-top: 4em;
-`;
-
-const StyledTextArea = styled.textarea`
-
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-
 `;
 
 
@@ -68,12 +57,17 @@ const ErrorText = styled.h4`
   color: #ff3333;
   font-weight: bold;
 `;
-
+const SuccessText = styled.h4`
+  color: #32a852;
+  font-weight: bold;
+`;
 
 function ContactForm() {
-  const [state, handleSubmit] = useForm("myylzbkj");
+  const [state, handleSubmit] = useForm("mzbydrbv");
   if (state.succeeded) {
-    return <SubTitle>Sent! Thanks for contacting us.</SubTitle>;
+    document.getElementById("formSuccessText").innerHTML = "Success!"
+    setTimeout(() => {  document.getElementById("formSuccessText").innerHTML = "" }, 2000);
+
   }
   else if (state.succeeded === false && state.errors.length > 0) {
     document.getElementById("formSubmit").innerHTML = "Submit"
@@ -92,39 +86,8 @@ function ContactForm() {
         name="email"
         required={true}
       />
-      <ValidationError
-        prefix="Email"
-        field="email"
-        errors={state.errors}
-      />
-      <label htmlFor="fullname">
-        Full Name:
-      </label>
-      <StyledInput
-        id="fullname"
-        name="fullname"
-        required={true}
-      />
-      <ValidationError
-        prefix="Full Name"
-        field="fullname"
-        errors={state.errors}
-      />
-      <label htmlFor="email">
-        Message:
-      </label>
-      <StyledTextArea
-        id="message"
-        name="message"
-        required={true}
-      />
-      <ValidationError
-        prefix="Message"
-        field="message"
-        errors={state.errors}
-        
-      />
       <ErrorText id="formErrorText"></ErrorText>
+      <SuccessText id="formSuccessText"></SuccessText>
       <StyledSubmit id="formSubmit" type="submit" disabled={state.submitting} onsubmit={function() {document.getElementById("formSubmit").innerHTML = "Sending..."; document.getElementById("formErrorText").innerHTML = ""}}>
         Submit
       </StyledSubmit>
@@ -132,18 +95,18 @@ function ContactForm() {
   );
 }
 
-const ContactUsPage = props => {
+const MailingPage = props => {
 
   return (
     <Layout location={props.location} noCover={true}>
-      <SEO title="Contact Us" />
-      <Hero title="Contact Us" />
+      <SEO title="Mailing List" />
+      <Hero title="Join our Mailing List" subTitle="Get notified when new books come out and when events are happing."/>
       <Wrapper style={{display: 'block'}}>
-        <SubTitle>Contact us through this form.</SubTitle>
+        <SubTitle>Just submit your email address!</SubTitle>
         <ContactForm />
       </Wrapper>
     </Layout>
   );
 };
 
-export default ContactUsPage;
+export default MailingPage;
