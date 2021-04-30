@@ -66,6 +66,7 @@ function ContactForm() {
   const [state, handleSubmit] = useForm("mzbydrbv");
   if (state.succeeded) {
     document.getElementById("formSuccessText").innerHTML = "Success!"
+    document.getElementById("formErrorText").innerHTML = ""
     setTimeout(() => {  document.getElementById("formSuccessText").innerHTML = "" }, 2000);
 
   }
