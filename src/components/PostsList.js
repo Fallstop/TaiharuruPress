@@ -4,7 +4,7 @@ import PostsListItem from './PostsListItem'
 import useSiteMetadata from '../hooks/use-site-config'
 
 const PostsList = ({ posts }) => {
-  const { defaultLang } = useSiteMetadata()
+  const { defaultLang, authorName } = useSiteMetadata()
 
   return (
     <Fragment>
@@ -17,7 +17,8 @@ const PostsList = ({ posts }) => {
           date: post.node.frontmatter.date,
           language: post.node.frontmatter.language || defaultLang,
           tags: post.node.frontmatter.tags || [],
-          coverImage: post.node.frontmatter.cover
+          coverImage: post.node.frontmatter.cover,
+          author: authorName,
         }
         return <PostsListItem key={props.slug} {...props} />
       })}

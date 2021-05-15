@@ -5,7 +5,7 @@ import useSiteMetadata from '../hooks/use-site-config'
 import useSiteImages from '../hooks/use-site-images'
 import TagList from './TagList'
 import Flag from './Flag'
-import { ReadingTime, Bull } from './Commons'
+import { Bull } from './Commons'
 
 const PreviewContainer = styled.aside`
   display: flex;
@@ -68,10 +68,14 @@ const PreviewContent = styled.div`
   }
 `
 
+const Author = styled.div`
+  color: var(--color-textSecondary);
+`
+
 const PrevNextPost = props => {
   const { previous, next } = props
   const articles = [previous, next].filter(i => i).map(item => ({ node: item }))
-  const { siteCover, defaultLang } = useSiteMetadata()
+  const { siteCover, defaultLang, authorName } = useSiteMetadata()
   const { fluid } = useSiteImages(siteCover)
 
   return (
@@ -105,7 +109,7 @@ const PrevNextPost = props => {
                     <p>{excerpt}</p>
                   </section>
                   <footer>
-                    <ReadingTime min={timeToRead} />
+                    <Author>{authorName}</Author>
                     {Array.isArray(tags) && (
                       <>
                         <Bull />

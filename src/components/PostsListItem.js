@@ -93,6 +93,7 @@ const PostsListItem = props => {
     language,
     excerpt,
     date,
+    author
   } = props;
   const { siteCover } = useSiteMetadata();
   const { fluid } = useSiteImages(siteCover);
@@ -121,7 +122,7 @@ const PostsListItem = props => {
                 </section>
                 <footer>
                   <Date>
-                    {date.split("T")[0]}
+                    {date.split("T")[0]} | {author}
                   </Date>
 
                 </footer>
